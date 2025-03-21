@@ -89,6 +89,7 @@ final class WC_Installments_Manager {
             require_once WC_INSTALLMENTS_PATH . 'includes/admin/class-admin.php';
             require_once WC_INSTALLMENTS_PATH . 'includes/admin/class-settings.php';
             require_once WC_INSTALLMENTS_PATH . 'includes/admin/class-plan-manager.php';
+            require_once WC_INSTALLMENTS_PATH . 'includes/admin/class-reports.php'; // Add this line
         }
     }
 
@@ -101,6 +102,7 @@ final class WC_Installments_Manager {
             $this->settings = new WC_Installments_Manager_Settings();
             $this->plan_manager = new WC_Installments_Manager_Plan_Manager();
             $this->admin = new WC_Installments_Manager_Admin();
+            $this->reports = new WC_Installments_Manager_Reports(); // Add this line
         }
     }
 
