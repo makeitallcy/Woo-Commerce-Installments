@@ -620,10 +620,11 @@ private function send_welcome_email($customer_id, $orders, $password = '', $plan
             wp_die(__('You do not have sufficient permissions to access this page.', 'wc-installments'));
         }
         
-        echo '<div class="wrap">';
-        echo '<h1>' . esc_html__('Installment Reports', 'wc-installments') . '</h1>';
-        echo '<p>' . esc_html__('Installment reports will be implemented here.', 'wc-installments') . '</p>';
-        echo '</div>';
+        // Get report type from URL parameters
+        $report_type = isset($_GET['report']) ? sanitize_text_field($_GET['report']) : 'overview';
+        
+        // Load appropriate template
+        include WC_INSTALLMENTS_PATH . 'templates/admin/reports.php';
     }
     
     /**
